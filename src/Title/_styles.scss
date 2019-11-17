@@ -1,0 +1,17 @@
+@import "~bulma/sass/elements/title.sass";
+
+h1 {
+  @extend .title.is-1;
+}
+
+h2 {
+  @extend .title.is-2;
+}
+
+h3 {
+  @extend .title.is-3;
+}
+
+h4 {
+  @extend .title.is-4;
+}

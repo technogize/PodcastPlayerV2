@@ -1,0 +1,10 @@
+//Bulma
+@import "~bulma/sass/utilities/_all.sass";
+@import "~bulma/sass/base/_all.sass";
+
+//Atoms
+@import './Title/styles';
+//@import './TextInput/styles';
+
+//Component list
+@import './ComponentList/styles'
