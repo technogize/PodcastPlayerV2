@@ -1,3 +1,8 @@
-@import "~bulma/sass/elements/form.sass";
+input {
+  &[type=text],
+  &[type=number] {
+    @extend .input;
+  }
+}
 
 //extend styles here - view expected markup here: https://bulma.io/documentation/form/input/

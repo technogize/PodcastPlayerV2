@@ -1,10 +1,18 @@
 //Bulma
 @import "~bulma/sass/utilities/_all.sass";
 @import "~bulma/sass/base/_all.sass";
+@import "~bulma/sass/layout/_all.sass";
+@import "~bulma/sass/grid/_all.sass";
+@import "~bulma/sass/form/_all.sass";
+
+//Global local styles
+@import './global-styles/styles';
 
 //Atoms
 @import './Title/styles';
-//@import './TextInput/styles';
+@import './Button/styles';
+@import './TextInput/styles';
+@import './Content/styles';
 
 //Component list
 @import './ComponentList/styles'
