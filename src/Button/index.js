@@ -1,44 +1,28 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-// eslint-disable-next-line no-unused-vars
-import { BrowserRouter, Link } from 'react-router-dom';
+const Button = props => {
+  const { buttonText, className, clickHandler } = props;
 
-const Button = (props) => {
-  const {
-    isLink,
-    buttonText,
-    buttonClass,
-    linkRoute,
-    clickHandler
-  } = props;
-
-  let button;
-  let btnClass = `button ${buttonClass}`;
-
-  if(isLink) {
-    button = <Link className={btnClass} to={linkRoute}>{buttonText}</Link>
-  } else {
-    button = <button className={btnClass} onClick={clickHandler}>{buttonText}</button>
-  }
+  const btnClass = `button ${className}`;
 
   return (
-    <>{button}</>
-  )
+    <button type="button" className={btnClass} onClick={clickHandler}>
+      {buttonText}
+    </button>
+  );
 };
 
 Button.propTypes = {
-  isLink: PropTypes.bool,
   buttonText: PropTypes.string,
-  buttonClass: PropTypes.string,
-  linkRoute: PropTypes.string
-}
+  className: PropTypes.string,
+  clickHandler: PropTypes.func
+};
 
 Button.defaultProps = {
-  isLink: false,
   buttonText: null,
-  buttonClass: null,
-  linkRoute: null
-}
+  className: null,
+  clickHandler: () => null
+};
 
 export default Button;

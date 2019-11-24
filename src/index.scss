@@ -6,13 +6,14 @@
 @import "~bulma/sass/form/_all.sass";
 
 //Global local styles
-@import './global-styles/styles';
+@import './styles/styles';
 
 //Atoms
 @import './Title/styles';
 @import './Button/styles';
 @import './TextInput/styles';
 @import './Content/styles';
+@import './Image/styles';
 
 //Component list
-@import './ComponentList/styles'
+@import './ComponentList/styles';

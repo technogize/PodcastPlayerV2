@@ -1,45 +1,66 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const TextInput = (props) => {
-    const {
-      isHidden,
-      placeholder,
-      inputCustomClass,
-      name,
-      id,
-      label,
-      labelCustomClass
-    } = props;
+const TextInput = props => {
+  const {
+    isHidden,
+    placeholder,
+    inputClass,
+    id,
+    label,
+    labelClass,
+    value,
+    isDisabled,
+    onChange
+  } = props;
 
-    const type = (isHidden) ? 'hidden' : 'text';
+  const type = isHidden ? "hidden" : "text";
+  const inputClasses = `Input__input ${inputClass}`;
+  const labelClasses = `Input__label ${labelClass}`;
 
-    return (
-      <>
-        {label && <label className={labelCustomClass}>{label}</label>}
-        <input id={id} type={type} name={name} placeholder={placeholder} className={inputCustomClass} />
-      </>
-    )
+  return (
+    <div className="Input">
+      {label && (
+        <label htmlFor={id} className={labelClasses}>
+          {label}
+        </label>
+      )}
+      <input
+        id={id}
+        type={type}
+        name={id}
+        placeholder={placeholder}
+        className={inputClasses}
+        value={value}
+        disabled={isDisabled}
+        onChange={onChange}
+      />
+    </div>
+  );
 };
 
 TextInput.propTypes = {
   isHidden: PropTypes.bool,
   placeholder: PropTypes.string,
-  inputCustomClass: PropTypes.string,
-  name: PropTypes.string,
+  inputClass: PropTypes.string,
   id: PropTypes.string,
   label: PropTypes.string,
-  labelCustomClass: PropTypes.string
-}
+  labelClass: PropTypes.string,
+  value: PropTypes.string,
+  isDisabled: PropTypes.bool,
+  onChange: PropTypes.func
+};
 
 TextInput.defaultProps = {
   isHidden: false,
   placeholder: null,
-  inputCustomClass: null,
-  name: null,
+  inputClass: null,
   id: null,
   label: null,
-  labelCustomClass: null
-}
+  labelClass: null,
+  value: null,
+  isDisabled: false,
+  onChange: () => null
+};
 
 export default TextInput;

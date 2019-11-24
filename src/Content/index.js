@@ -1,27 +1,28 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-const Content = (props) => {
-  const {
-    content,
-    customClass
-  } = props;
+const Content = props => {
+  const { content, className } = props;
 
-  const componentClass = (customClass) ? `Content ${customClass}` : 'customClass';
+  const componentClass = className ? `Content ${className}` : "Content";
 
   return (
-    <div className={componentClass} dangerouslySetInnerHTML={{__html: content}}></div>
-  )
+    <div
+      className={componentClass}
+      // eslint-disable-next-line
+      dangerouslySetInnerHTML={{ __html: content }}
+    />
+  );
 };
 
 Content.propTypes = {
   content: PropTypes.string,
-  customClass: PropTypes.string
-}
+  className: PropTypes.string
+};
 
 Content.defaultProps = {
   content: null,
-  customClass: null
-}
+  className: null
+};
 
 export default Content;

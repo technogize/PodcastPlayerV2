@@ -1,10 +1,11 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import React from "react";
+import { BrowserRouter as Router, Route } from "react-router-dom";
+import logo from "./logo.svg";
+import "./App.css";
 
-import ComponentList from './ComponentList'
-import Title from './Title'
+import ComponentList from "./ComponentList";
+import Title from "./Title";
+import Button from "./Button";
 
 const App = () => {
   return (
@@ -12,19 +13,17 @@ const App = () => {
       <Router>
         <Route exact path="/">
           <header className="App-header">
-          <Title text="Yeah!" />
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
+            <Title text="Yeah!" />
+            <img src={logo} className="App-logo" alt="logo" />
+            <p>
+              Edit <code>src/App.js</code> and save to reload.
+            </p>
+            <Button
+              isLink
+              linkRoute="/all-components"
+              buttonText="Components"
+              buttonClass="is-success"
+            />
           </header>
         </Route>
         <Route exact path="/all-components">
@@ -33,6 +32,6 @@ const App = () => {
       </Router>
     </div>
   );
-}
+};
 
 export default App;

@@ -1,8 +1,15 @@
-input {
-  &[type=text],
-  &[type=number] {
-    @extend .input;
+.Input {
+  text-align: left;
+  &__label {
+    margin-bottom: 5px;
+    display: inline-block;
   }
+  &__input {
+    &[type=text],
+    &[type=number] {
+      @extend .input;
+    }
+  }  
 }
 
 //extend styles here - view expected markup here: https://bulma.io/documentation/form/input/
