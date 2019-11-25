@@ -1,10 +1,10 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Content = props => {
   const { content, className } = props;
 
-  const componentClass = className ? `Content ${className}` : "Content";
+  const componentClass = className ? `Content ${className}` : 'Content';
 
   return (
     <div

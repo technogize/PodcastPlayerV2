@@ -11,11 +11,15 @@
     "prettier"
   ],
   "rules": {
-    "semi": 0,
+    "semi": 0,    
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }], //allow js 
     "prettier/prettier": [
       "error", {
-        "no-trailing-spaces": true
+        "no-trailing-spaces": true,
+        "single-quote": true,
+        "quotes": ["single"],
+        "singleQuote": true,
+        "endOfLine": "auto"
       }
     ]
   }

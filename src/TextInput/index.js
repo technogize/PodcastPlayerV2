@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const TextInput = props => {
   const {
@@ -14,7 +14,7 @@ const TextInput = props => {
     onChange
   } = props;
 
-  const type = isHidden ? "hidden" : "text";
+  const type = isHidden ? 'hidden' : 'text';
   const inputClasses = `Input__input ${inputClass}`;
   const labelClasses = `Input__label ${labelClass}`;
 

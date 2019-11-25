@@ -1,5 +1,5 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
 const Title = props => {
   const { tag: Tag, text, classname } = props;
@@ -14,7 +14,7 @@ Title.propTypes = {
 };
 
 Title.defaultProps = {
-  tag: "h1",
+  tag: 'h1',
   text: null,
   classname: null
 };

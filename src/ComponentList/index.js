@@ -1,13 +1,14 @@
-import React from "react";
+import React from 'react';
 
 // eslint-disable-next-line no-unused-vars
-import { BrowserRouter, Link } from "react-router-dom";
+import { BrowserRouter, Link } from 'react-router-dom';
 
-import Title from "../Title";
-import TextInput from "../TextInput";
-import Content from "../Content";
-import Button from "../Button";
-import Image from "../Image";
+import Modal from 'react-modal';
+import Title from '../Title';
+import TextInput from '../TextInput';
+import Content from '../Content';
+import Button from '../Button';
+import Image from '../Image';
 
 const ComponentList = () => {
   const htmlContent = `<div class="abc">
@@ -77,7 +78,7 @@ const ComponentList = () => {
             <Button
               buttonText="Info"
               className="is-info"
-              clickHandler={() => console.log("this is a button")} // eslint-disable-line no-console
+              clickHandler={() => console.log('this is a button')} // eslint-disable-line no-console
             />
 
             <Button buttonText="success" className="is-success" />
@@ -104,6 +105,7 @@ const ComponentList = () => {
           <section className="ComponentList__section">
             <Title text="ReactModal Component" tag="h2" />
             <Button className="is-primary" buttonText="Open modal" />
+            <Modal />
           </section>
         </div>
       </div>

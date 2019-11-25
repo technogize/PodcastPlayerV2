@@ -1,9 +1,9 @@
-import React from "react";
-import { shallow } from "../enzyme";
-import Image from ".";
+import React from 'react';
+import { shallow } from '../enzyme';
+import Image from '.';
 
-describe("Content component tests", () => {
-  it("Renders Content", () => {
+describe('Content component tests', () => {
+  it('Renders Content', () => {
     shallow(
       <Image
         alt="Picture here"
