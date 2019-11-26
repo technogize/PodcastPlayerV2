@@ -1,14 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 // eslint-disable-next-line no-unused-vars
 import { BrowserRouter, Link } from 'react-router-dom';
 
-import Modal from 'react-modal';
 import Title from '../Title';
 import TextInput from '../TextInput';
 import Content from '../Content';
 import Button from '../Button';
 import Image from '../Image';
+import Modal from '../Modal';
 
 const ComponentList = () => {
   const htmlContent = `<div class="abc">
@@ -16,6 +16,10 @@ const ComponentList = () => {
                         <p><a href="/">Donec gravida</a> lorem condimentum suscipit dapibus. Donec congue pretium imperdiet.</p>
                         <p>Donec pellentesque, dolor ut tristique ultrices, nisl nunc tristique lorem, quis tristique velit magna et neque. Suspendisse potenti. Quisque elit libero, congue vitae viverra eu, faucibus ut nunc.</p>
                       </div>`;
+
+  // Modal state handler
+  const [isModalOpen, setModalOpen] = useState(false);
+  const [isModalTwoOpen, setModalTwoOpen] = useState(false);
 
   return (
     <div className="ComponentList">
@@ -78,7 +82,7 @@ const ComponentList = () => {
             <Button
               buttonText="Info"
               className="is-info"
-              clickHandler={() => console.log('this is a button')} // eslint-disable-line no-console
+              onClick={() => console.log('this is a button')} // eslint-disable-line no-console
             />
 
             <Button buttonText="success" className="is-success" />
@@ -104,8 +108,35 @@ const ComponentList = () => {
         <div className="column">
           <section className="ComponentList__section">
             <Title text="ReactModal Component" tag="h2" />
-            <Button className="is-primary" buttonText="Open modal" />
-            <Modal />
+            <Button
+              className="is-primary"
+              buttonText="Open modal 1"
+              onClick={() => {
+                setModalOpen(true);
+              }}
+            />
+            <Button
+              className="is-secondary"
+              buttonText="Open modal 2"
+              onClick={() => {
+                setModalTwoOpen(true);
+              }}
+            />
+            <Modal isOpen={isModalOpen} setModalOpen={setModalOpen}>
+              <h2>Opened Modal 1</h2>
+              <p>
+                This is a test. Lorem ipsum dolor sit amet, consectetur
+                adipiscing elit. Mauris a semper orci. Nunc accumsan luctus
+                lacus id lacinia. Cras finibus mattis lacus ut blandit. Cras
+                fermentum turpis vitae augue vehicula scelerisque. Morbi sed
+                rhoncus quam. Morbi a imperdiet sapien. Quisque pulvinar eros
+                sit amet pellentesque pretium.
+              </p>
+            </Modal>
+            <Modal isOpen={isModalTwoOpen} setModalOpen={setModalTwoOpen}>
+              <h2>Opened Modal 2</h2>
+              <p>This is a test to open modal 2</p>
+            </Modal>
           </section>
         </div>
       </div>

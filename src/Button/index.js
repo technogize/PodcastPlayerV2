@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Button = props => {
-  const { buttonText, className, clickHandler } = props;
+  const { buttonText, className, onClick } = props;
 
-  const btnClass = `button ${className}`;
+  const btnClass = `Button ${className}`;
 
   return (
-    <button type="button" className={btnClass} onClick={clickHandler}>
+    <button type="button" className={btnClass} onClick={onClick}>
       {buttonText}
     </button>
   );
@@ -16,13 +16,13 @@ const Button = props => {
 Button.propTypes = {
   buttonText: PropTypes.string,
   className: PropTypes.string,
-  clickHandler: PropTypes.func
+  onClick: PropTypes.func
 };
 
 Button.defaultProps = {
   buttonText: null,
   className: null,
-  clickHandler: () => null
+  onClick: () => null
 };
 
 export default Button;

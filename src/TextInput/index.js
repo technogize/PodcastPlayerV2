@@ -58,7 +58,7 @@ TextInput.defaultProps = {
   id: null,
   label: null,
   labelClass: null,
-  value: null,
+  value: '',
   isDisabled: false,
   onChange: () => null
 };

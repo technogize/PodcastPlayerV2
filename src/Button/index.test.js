@@ -10,7 +10,7 @@ describe('Content component tests', () => {
   it('Test click event', () => {
     const btnClickCallback = jest.fn();
 
-    const button = shallow(<Button clickHandler={btnClickCallback} />);
+    const button = shallow(<Button onClick={btnClickCallback} />);
     button.find('button').simulate('click');
     expect(btnClickCallback.mock.calls.length).toEqual(1);
   });

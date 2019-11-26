@@ -2,4 +2,8 @@
 
 .Button {
   @extend .button;
+
+  &--icon {
+    border: none;
+  }
 }
