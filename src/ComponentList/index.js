@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 // eslint-disable-next-line no-unused-vars
 import { BrowserRouter, Link } from 'react-router-dom';
@@ -16,10 +16,6 @@ const ComponentList = () => {
                         <p><a href="/">Donec gravida</a> lorem condimentum suscipit dapibus. Donec congue pretium imperdiet.</p>
                         <p>Donec pellentesque, dolor ut tristique ultrices, nisl nunc tristique lorem, quis tristique velit magna et neque. Suspendisse potenti. Quisque elit libero, congue vitae viverra eu, faucibus ut nunc.</p>
                       </div>`;
-
-  // Modal state handler
-  const [isModalOpen, setModalOpen] = useState(false);
-  const [isModalTwoOpen, setModalTwoOpen] = useState(false);
 
   return (
     <div className="ComponentList">
@@ -77,6 +73,8 @@ const ComponentList = () => {
 
             <Button buttonText="Regular" />
 
+            <Button className="Button--icon Button--icon-play" />
+
             <Button buttonText="Text button" className="is-text" />
 
             <Button
@@ -108,21 +106,7 @@ const ComponentList = () => {
         <div className="column">
           <section className="ComponentList__section">
             <Title text="ReactModal Component" tag="h2" />
-            <Button
-              className="is-primary"
-              buttonText="Open modal 1"
-              onClick={() => {
-                setModalOpen(true);
-              }}
-            />
-            <Button
-              className="is-secondary"
-              buttonText="Open modal 2"
-              onClick={() => {
-                setModalTwoOpen(true);
-              }}
-            />
-            <Modal isOpen={isModalOpen} setModalOpen={setModalOpen}>
+            <Modal buttonClass="Button is-primary" buttonText="Open modal 1">
               <h2>Opened Modal 1</h2>
               <p>
                 This is a test. Lorem ipsum dolor sit amet, consectetur
@@ -133,9 +117,9 @@ const ComponentList = () => {
                 sit amet pellentesque pretium.
               </p>
             </Modal>
-            <Modal isOpen={isModalTwoOpen} setModalOpen={setModalTwoOpen}>
+            <Modal buttonClass="Button Button--icon Button--icon-menu">
               <h2>Opened Modal 2</h2>
-              <p>This is a test to open modal 2</p>
+              <p>This is a test for modal 2</p>
             </Modal>
           </section>
         </div>

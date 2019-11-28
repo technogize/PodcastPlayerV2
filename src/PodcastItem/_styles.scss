@@ -1,0 +1,30 @@
+@import '../styles/mixins/mixins';
+
+.PodcastItem {
+  flex: 1 1 33%;
+  max-width: 33%;
+  cursor: pointer;
+
+  &__image {
+    background-size: 100%;
+    background-repeat: no-repeat;
+    width: 100%;
+
+    &:after {
+      content: "";
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+
+  &__text-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  &__text {
+    @include absolute-center();
+    text-align: center;
+  }
+}

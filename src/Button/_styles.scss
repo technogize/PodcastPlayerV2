@@ -1,9 +1,25 @@
 @import "~bulma/sass/elements/button.sass";
+@import "../styles/icons";
+
+$icons: 'x', 'play', 'pause', 'forward', 'rewind', 'skip-prev', 'skip-next', 'arrow-left', 'menu';
 
 .Button {
   @extend .button;
 
+  &:focus:not(:active) {
+    box-shadow: none;
+  }
+
   &--icon {
-    border: none;
+    border: none;    
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  @each $icon in $icons {
+    &--icon-#{$icon} {
+      @extend %icon-#{$icon};
+    }
   }
 }

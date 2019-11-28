@@ -1,6 +1,5 @@
 /* eslint-disable react/destructuring-assignment */
-
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import ReactModal from 'react-modal';
@@ -9,32 +8,41 @@ import Button from '../Button';
 ReactModal.setAppElement('#root');
 
 const Modal = props => {
-  const { isOpen, setModalOpen } = props;
+  const [isOpen, setModalOpen] = useState(false);
 
-  const closeModal = () => {
-    setModalOpen(false);
-  };
+  const { buttonText, buttonClass } = props;
 
   return (
-    <ReactModal isOpen={isOpen}>
+    <>
       <Button
-        buttonText="X"
-        className="Button--icon Modal__close"
-        onClick={closeModal}
+        className={buttonClass}
+        buttonText={buttonText}
+        onClick={() => {
+          setModalOpen(true);
+        }}
       />
-      <div>{props.children}</div>
-    </ReactModal>
+
+      <ReactModal isOpen={isOpen}>
+        <Button
+          className="Button--icon Button--icon-x Modal__close-btn"
+          onClick={() => {
+            setModalOpen(false);
+          }}
+        />
+        <div>{props.children}</div>
+      </ReactModal>
+    </>
   );
 };
 
 Modal.propTypes = {
-  isOpen: PropTypes.bool,
-  setModalOpen: PropTypes.func
+  buttonText: PropTypes.string,
+  buttonClass: PropTypes.string
 };
 
 Modal.defaultProps = {
-  isOpen: false,
-  setModalOpen: () => {}
+  buttonText: null,
+  buttonClass: null
 };
 
 export default Modal;

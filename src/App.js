@@ -1,23 +1,19 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import './App.scss';
 
 import ComponentList from './ComponentList';
-import Title from './Title';
+import Podcasts from './Podcasts';
 
 const App = () => {
   return (
     <div className="App">
+      <div >
+
+      </div>
       <Router>
         <Route exact path="/">
-          <header className="App-header">
-            <Title text="Yeah!" />
-            <img src={logo} className="App-logo" alt="logo" />
-            <Link to="/all-components" className="button is-success">
-              Components
-            </Link>
-          </header>
+          <Podcasts />
         </Route>
         <Route exact path="/all-components">
           <ComponentList />
