@@ -1,16 +1,14 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.scss';
 
 import ComponentList from './ComponentList';
 import Podcasts from './Podcasts';
+import EpisodeList from './EpisodeList';
 
 const App = () => {
   return (
     <div className="App">
-      <div >
-
-      </div>
       <Router>
         <Route exact path="/">
           <Podcasts />
@@ -18,6 +16,11 @@ const App = () => {
         <Route exact path="/all-components">
           <ComponentList />
         </Route>
+        <Switch>
+          <Route path="/episodes/:id">
+            <EpisodeList />
+          </Route>
+        </Switch>
       </Router>
     </div>
   );
