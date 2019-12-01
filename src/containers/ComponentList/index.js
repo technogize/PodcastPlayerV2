@@ -3,12 +3,12 @@ import React from 'react';
 // eslint-disable-next-line no-unused-vars
 import { BrowserRouter, Link } from 'react-router-dom';
 
-import Title from '../Title';
-import TextInput from '../TextInput';
-import Content from '../Content';
-import Button from '../Button';
-import Image from '../Image';
-import Modal from '../Modal';
+import Title from '../../components/Title';
+import TextInput from '../../components/TextInput';
+import Content from '../../components/Content';
+import Button from '../../components/Button';
+import Image from '../../components/Image';
+import Modal from '../../components/Modal';
 
 const ComponentList = () => {
   const htmlContent = `<div class="abc">

@@ -2,9 +2,9 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.scss';
 
-import ComponentList from './ComponentList';
-import Podcasts from './Podcasts';
-import EpisodeList from './EpisodeList';
+import ComponentList from './containers/ComponentList';
+import Podcasts from './containers/Podcasts';
+import EpisodeList from './containers/EpisodeList';
 
 const App = () => {
   return (

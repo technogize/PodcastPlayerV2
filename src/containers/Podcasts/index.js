@@ -1,7 +1,7 @@
 import React from 'react';
-import PodcastItem from '../PodcastItem';
+import PodcastItem from '../../components/PodcastItem';
 
-import podcastData from '../data/podcasts.json'; // Stub data
+import podcastData from '../../data/podcasts.json'; // Stub data
 
 const Podcasts = () => {
   return (
