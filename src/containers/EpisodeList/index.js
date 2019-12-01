@@ -2,12 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 // eslint-disable-next-line no-unused-vars
 import { BrowserRouter, Link } from 'react-router-dom';
-import getPodcastEpisodes from '../utils/rss';
-import { INIT_NO_OF_EPISODES_TO_SHOW } from '../utils/constants';
+import Button from '../../components/Button';
+import getPodcastEpisodes from '../../utils/rss';
+import { INIT_NO_OF_EPISODES_TO_SHOW } from '../../utils/constants';
 
-import Button from '../Button';
-
-import podcastData from '../data/podcasts.json'; // Stub dat
+import podcastData from '../../data/podcasts.json'; // Stub dat
 
 const EpisodeList = () => {
   const { id } = useParams();
