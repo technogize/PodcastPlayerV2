@@ -1,22 +1,22 @@
-//Bulma
+// Bulma
 @import "~bulma/sass/utilities/_all.sass";
 @import "~bulma/sass/base/_all.sass";
 @import "~bulma/sass/layout/_all.sass";
 @import "~bulma/sass/grid/_all.sass";
 @import "~bulma/sass/form/_all.sass";
 
-//Global local styles
+// Global local styles
 @import './styles/styles';
 
-//Atoms
-@import './Title/styles';
-@import './Button/styles';
-@import './TextInput/styles';
-@import './Content/styles';
-@import './Image/styles';
-@import './Modal/styles';
-@import './Podcasts/styles';
-@import './PodcastItem/styles';
+// Components
+@import './components/Title/styles';
+@import './components/Button/styles';
+@import './components/TextInput/styles';
+@import './components/Content/styles';
+@import './components/Image/styles';
+@import './components/Modal/styles';
+@import './components/PodcastItem/styles';
 
-//Component list
-@import './ComponentList/styles';
+// Containers
+@import './containers/Podcasts/styles';
+@import './containers/ComponentList/styles';
