@@ -23,7 +23,6 @@ const EpisodeList = () => {
     const feed = podcastData.filter(podcast => podcast.id === parseInt(id, 10));
 
     getPodcastEpisodes(feed[0].url, data => {
-      console.log(data);
       setIsLoading(false);
       setFeedDetails(data.feed);
       setEpisodes(data.items);

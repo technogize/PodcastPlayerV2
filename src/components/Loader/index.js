@@ -8,7 +8,7 @@ const Loader = props => {
 
   return (
     <div className={classes}>
-      <span>Loading...</span>
+      <div className="Loader__swirly" />
     </div>
   );
 };
