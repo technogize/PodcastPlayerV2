@@ -1,30 +1,37 @@
 @import '../../styles/mixins/mixins';
+@import '../../styles/variables/index';
 
 .PodcastItem {
   flex: 1 1 33%;
   max-width: 33%;
   cursor: pointer;
+  padding: 10px;
 
   &__image {
-    background-size: 100%;
+    background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
     width: 100%;
-
-    &:after {
-      content: "";
-      display: block;
-      padding-bottom: 100%;
-    }
+    @include square-div();
   }
 
   &__text-wrapper {
     width: 100%;
     height: 100%;
     position: relative;
+    border: 2px solid $col-primary;
+    background: lighten($col-primary, 30);
+    transition: all 250ms;
+    
+    &:hover,
+    &:focus {
+      background: $col-primary;
+    }
   }
 
   &__text {
     @include absolute-center();
     text-align: center;
+    padding: 10px;
   }
 }

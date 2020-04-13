@@ -1,0 +1,18 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  color: $col-white;
+  background: $col-dark-grey;
+  min-height: 100vh;
+}
+
+hr {
+  background-color: $col-primary;
+  margin: 10px 0;
+}

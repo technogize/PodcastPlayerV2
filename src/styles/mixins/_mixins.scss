@@ -4,3 +4,16 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+
+@mixin square-div($width: 250px) {
+  &:after {
+    content: "";
+    display: block;
+    padding-bottom: 100%;
+    width: $width;
+  }
+}
+
+@mixin random-background-colour(){
+  background: rgb(random(255), random(255), random(255));
+}

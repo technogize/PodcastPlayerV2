@@ -1,0 +1,53 @@
+@import '../../styles/mixins/mixins';
+
+.Episode {
+  height: 135px;
+  overflow: hidden;
+
+  &__bottom {
+    display: flex;
+  }
+
+  &__image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include square-div(100px);
+  }
+
+  &__name {
+    width: 100%;
+    font-weight: bold;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-bottom: 5px;
+  }
+
+  &__info-container {
+    padding: 0 10px;
+    position: relative;
+  }
+
+  &__controls {
+    padding-right: 5px;
+    position: absolute;
+    bottom: 0;
+  }
+
+  &__control-button {
+    height: 45px;
+    width: 45px;
+    margin-right: 10px;
+  }
+
+  &__podcast {
+    display: block;
+  }
+
+  &__pub-date {
+    color: $col-primary;
+  }
+}

@@ -22,7 +22,11 @@ const Modal = props => {
         }}
       />
 
-      <ReactModal isOpen={isOpen}>
+      <ReactModal
+        className="Modal"
+        overlayClassName="Modal__overlay"
+        isOpen={isOpen}
+      >
         <Button
           className="Button--icon Button--icon-x Modal__close-btn"
           onClick={() => {

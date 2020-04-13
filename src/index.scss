@@ -16,7 +16,10 @@
 @import './components/Image/styles';
 @import './components/Modal/styles';
 @import './components/PodcastItem/styles';
+@import './components/Episode/styles';
+@import './components/Loader/styles';
 
 // Containers
 @import './containers/Podcasts/styles';
+@import './containers/EpisodeList/styles';
 @import './containers/ComponentList/styles';

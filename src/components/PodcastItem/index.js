@@ -7,9 +7,12 @@ const PodcastItem = props => {
   const { imageUrl, name, id } = props;
   const route = `/episodes/${id}`;
   const podcastImageStyle = { backgroundImage: `url(${imageUrl})` };
+  const classes = `PodcastItem${
+    !imageUrl ? ' PodcastItem--no-image' : ' PodcastItem--image'
+  }`;
 
   return (
-    <div className="PodcastItem">
+    <div className={classes}>
       <Link to={route}>
         {imageUrl && (
           <div
