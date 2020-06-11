@@ -1,4 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
 import { useParams } from 'react-router';
 // eslint-disable-next-line no-unused-vars
 import { BrowserRouter, Link } from 'react-router-dom';
@@ -6,6 +8,7 @@ import Button from '../../components/Button';
 import Episode from '../../components/Episode';
 import Loader from '../../components/Loader';
 import getPodcastEpisodes from '../../utils/rss';
+import setNowPlaying from '../../actions/action_set-now-playing';
 import { INIT_NO_OF_EPISODES_TO_SHOW } from '../../utils/constants';
 
 import podcastData from '../../data/podcasts.json'; // Stub data
@@ -40,6 +43,11 @@ const EpisodeList = () => {
     setVisibleEpisodes(completeNewListOfEpisodes);
   };
 
+  const playHandler = (ev, episodeData) => {
+    console.log(episodeData);
+    setNowPlaying(episodeData);
+  };
+
   return (
     <div className="EpisodeList">
       <Link to="/">Go back</Link>
@@ -52,6 +60,8 @@ const EpisodeList = () => {
               episodeDesc={episode.description}
               episodeDate={episode.pubDate}
               podcastName={feedDetails.title}
+              guid={episode.guid}
+              onPlayClick={playHandler}
             />
             <hr />
           </React.Fragment>
@@ -70,4 +80,13 @@ const EpisodeList = () => {
   );
 };
 
-export default EpisodeList;
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators(
+    {
+      setNowPlaying
+    },
+    dispatch
+  );
+};
+
+export default connect(null, mapDispatchToProps)(EpisodeList);
