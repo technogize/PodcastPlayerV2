@@ -7,7 +7,6 @@ export default (url, callback) => {
     url: `${REQUEST_PROXY}${url}`
   })
     .then(response => {
-      console.log(response.data);
       callback(response.data);
     })
     .catch(err => {

@@ -10,12 +10,15 @@ const Episode = props => {
     episodeDesc,
     podcastName,
     episodeDate,
+    guid,
     isPlaylist,
-    isSubscribeBtn,
-    isUnsubscribeBtn
+    onPlayClick
   } = props;
 
   const backgroundImage = { backgroundImage: `url(${imageUrl})` };
+  const playHandler = e => {
+    onPlayClick(e, props);
+  };
 
   return (
     <div className="Episode">
@@ -26,7 +29,10 @@ const Episode = props => {
           <div className="Episode__podcast">{podcastName}</div>
           <div className="Episode__pub-date">{episodeDate}</div>
           <div className="Episode__controls">
-            <Button className="Button--icon Button--icon-play Episode__control-button" />
+            <Button
+              className="Button--icon Button--icon-play Episode__control-button"
+              onClick={playHandler}
+            />
             <Modal buttonClass="Button--icon Button--icon-info Episode__control-button">
               <h3>{episodeName}</h3>
               <div>{episodeDesc}</div>
@@ -45,8 +51,7 @@ Episode.propTypes = {
   podcastName: PropTypes.string,
   episodeDate: PropTypes.string,
   isPlaylist: PropTypes.bool,
-  isSubscribeBtn: PropTypes.bool,
-  isUnsubscribeBtn: PropTypes.bool
+  onPlayClick: PropTypes.func
 };
 
 Episode.defaultProps = {
@@ -56,8 +61,7 @@ Episode.defaultProps = {
   podcastName: '-',
   episodeDate: null,
   isPlaylist: false,
-  isSubscribeBtn: false,
-  isUnsubscribeBtn: false
+  onPlayClick: () => {}
 };
 
 export default Episode;
