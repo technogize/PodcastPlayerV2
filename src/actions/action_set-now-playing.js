@@ -6,7 +6,7 @@
     title: '-',
     url: '-',
     author: '-',
-    link: '-',
+    mp3url: '-',
     guid: ''
   }
  */

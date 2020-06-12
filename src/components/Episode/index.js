@@ -10,7 +10,6 @@ const Episode = props => {
     episodeDesc,
     podcastName,
     episodeDate,
-    guid,
     isPlaylist,
     onPlayClick
   } = props;
