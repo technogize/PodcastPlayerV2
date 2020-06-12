@@ -9,6 +9,7 @@
 @import './styles/styles';
 
 // Components
+@import './App.scss';
 @import './components/Title/styles';
 @import './components/Button/styles';
 @import './components/TextInput/styles';
@@ -18,6 +19,7 @@
 @import './components/PodcastItem/styles';
 @import './components/Episode/styles';
 @import './components/Loader/styles';
+@import './components/Player/styles';
 
 // Containers
 @import './containers/Podcasts/styles';

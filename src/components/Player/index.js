@@ -5,7 +5,17 @@ import PropTypes from 'prop-types';
 const Player = props => {
   const { url } = props;
 
-  return <ReactPlayer url={url} controls file="forceAudio" />;
+  return (
+    <div className="Player">
+      <ReactPlayer
+        url={url}
+        controls
+        file="forceAudio"
+        width="100%"
+        height="100%"
+      />
+    </div>
+  );
 };
 
 Player.propTypes = {

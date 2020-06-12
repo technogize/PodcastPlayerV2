@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import './App.scss';
+import { useSelector } from 'react-redux';
 
 import ComponentList from './containers/ComponentList';
 import Podcasts from './containers/Podcasts';
@@ -8,8 +8,12 @@ import EpisodeList from './containers/EpisodeList';
 import PlayerContainer from './containers/Player';
 
 const App = () => {
+  const currentTrackData = useSelector(state => state.nowPlaying);
+  const styleClass =
+    currentTrackData !== false ? 'App App--player-visible' : 'App';
+
   return (
-    <div className="App">
+    <div className={styleClass}>
       <Router>
         <Route exact path="/">
           <Podcasts />

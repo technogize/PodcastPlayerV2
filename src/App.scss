@@ -3,4 +3,8 @@
   margin: 0 auto;
   padding-right: 15px;
   padding-left: 15px;
+
+  &--player-visible {
+    padding-bottom: $playerHeight;
+  }
 }
