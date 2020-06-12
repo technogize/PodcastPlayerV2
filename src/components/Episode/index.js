@@ -5,6 +5,7 @@ import Modal from '../Modal';
 
 const Episode = props => {
   const {
+    mp3url,
     imageUrl,
     episodeName,
     episodeDesc,

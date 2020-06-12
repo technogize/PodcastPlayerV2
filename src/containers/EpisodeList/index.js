@@ -61,6 +61,7 @@ const EpisodeList = () => {
               episodeDate={episode.pubDate}
               podcastName={feedDetails.title}
               guid={episode.guid}
+              mp3url={episode.enclosure.link}
               onPlayClick={playHandler}
             />
             <hr />

@@ -5,6 +5,7 @@ import './App.scss';
 import ComponentList from './containers/ComponentList';
 import Podcasts from './containers/Podcasts';
 import EpisodeList from './containers/EpisodeList';
+import PlayerContainer from './containers/Player';
 
 const App = () => {
   return (
@@ -22,6 +23,8 @@ const App = () => {
           </Route>
         </Switch>
       </Router>
+
+      <PlayerContainer />
     </div>
   );
 };
