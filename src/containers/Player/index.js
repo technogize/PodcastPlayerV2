@@ -4,9 +4,20 @@ import Player from '../../components/Player';
 
 const PlayerContainer = () => {
   const currentTrackData = useSelector(state => state.nowPlaying);
-  console.log('Player:: ', currentTrackData);
+  const isStartPlaying = !!currentTrackData;
+
   return (
-    <>{currentTrackData && <Player url={currentTrackData.enclosure.link} />}</>
+    <>
+      {Object.keys(currentTrackData).length !== 0 &&
+        currentTrackData.constructor === Object && (
+          <Player
+            playing={isStartPlaying}
+            url={currentTrackData.enclosure.link}
+            title={currentTrackData.title}
+            podcastTitle={currentTrackData.podcastTitle}
+          />
+        )}
+    </>
   );
 };
 

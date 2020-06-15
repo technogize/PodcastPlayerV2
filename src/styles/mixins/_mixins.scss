@@ -5,7 +5,18 @@
   transform: translate(-50%, -50%);
 }
 
-@mixin square-div($width: 250px) {
+@mixin flex-horizontal-center {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-vertical-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@mixin square-div($width: auto) {
   &:after {
     content: "";
     display: block;

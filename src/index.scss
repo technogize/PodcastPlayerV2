@@ -2,7 +2,6 @@
 @import "~bulma/sass/utilities/_all.sass";
 @import "~bulma/sass/base/_all.sass";
 @import "~bulma/sass/layout/_all.sass";
-@import "~bulma/sass/grid/_all.sass";
 @import "~bulma/sass/form/_all.sass";
 
 // Global local styles
@@ -10,6 +9,7 @@
 
 // Components
 @import './App.scss';
+@import './components/Header/styles';
 @import './components/Title/styles';
 @import './components/Button/styles';
 @import './components/TextInput/styles';

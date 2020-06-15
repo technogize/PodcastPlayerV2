@@ -30,6 +30,10 @@
     padding: 0 10px;
     position: relative;
     min-height: 100px;
+
+    &--no-padding {
+      padding: 0;
+    }
   }
 
   &__controls {
