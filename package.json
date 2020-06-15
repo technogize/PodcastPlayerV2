@@ -2,6 +2,7 @@
   "name": "podcast-player-v2",
   "version": "0.1.0",
   "private": true,
+  "homepage": "/podcast-player/",
   "dependencies": {
     "axios": "^0.19.0",
     "bulma": "^0.8.0",

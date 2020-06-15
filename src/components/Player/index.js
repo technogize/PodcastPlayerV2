@@ -50,10 +50,12 @@ const Player = props => {
         onMouseDown={handleSeekMouseDown}
         onChange={handleSeekChange}
         onMouseUp={handleSeekMouseUp}
+        onTouchStart={handleSeekMouseDown}
+        onTouchEnd={handleSeekMouseUp}
       />
       <div className="Player__controls">
         <Button
-          className={`Button--icon Episode__control-button ${
+          className={`Button--icon Player__controls-play-pause ${
             isPlaying ? 'Button--icon-pause' : 'Button--icon-play'
           }`}
           onClick={handlePlayPause}

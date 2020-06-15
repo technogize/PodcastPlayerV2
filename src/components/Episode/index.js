@@ -19,12 +19,16 @@ const Episode = props => {
     onPlayClick(e, props);
   };
 
+  const infoContainerClasses = imageUrl
+    ? 'Episode__info-container'
+    : 'Episode__info-container Episode__info-container--no-padding';
+
   return (
     <div className="Episode">
       <div className="Episode__name">{episodeName}</div>
       <div className="Episode__bottom">
         {imageUrl && <div className="Episode__image" style={backgroundImage} />}
-        <div className="Episode__info-container">
+        <div className={infoContainerClasses}>
           <div className="Episode__podcast">{podcastName}</div>
           <div className="Episode__pub-date">{episodeDate}</div>
           <div className="Episode__controls">

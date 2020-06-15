@@ -1,8 +1,9 @@
 .App {
   max-width: 1440px;
   margin: 0 auto;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-top: calc(#{$header-height + $app-gutters});
+  padding-right: $app-gutters;
+  padding-left: $app-gutters;
 
   &--player-visible {
     padding-bottom: $playerHeight;

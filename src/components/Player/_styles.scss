@@ -20,7 +20,7 @@
       text-overflow: ellipsis;
     }
     &-track {
-      font-size: 30px;
+      font-size: 26px;
       font-weight: bold;
       white-space: nowrap; 
       width: 100%;
@@ -31,6 +31,16 @@
 
   &__seekbar {
     @include rangeStyle;
+  }
+
+  &__controls {
+    text-align: center;
+    
+    &-play-pause {
+      height: 65px;
+      width: 65px;
+      margin: 0 5px;
+    }
   }
 
   &__react-player {
