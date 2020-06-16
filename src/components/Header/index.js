@@ -18,10 +18,10 @@ const Header = () => {
         <h4>Podcasts</h4>
       </div>
       <div className="Header__right">
-        <span className="">v0.1.0</span>
+        <span className="">v0.1.1</span>
       </div>
     </div>
   );
-}
+};
 
 export default Header;

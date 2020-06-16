@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 // eslint-disable-next-line no-unused-vars
-import { BrowserRouter, Link } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 import Button from '../../components/Button';
 import EpisodeContainer from '../Episode';
 import Loader from '../../components/Loader';
@@ -42,7 +42,6 @@ const EpisodeList = () => {
 
   return (
     <div className="EpisodeList">
-      <Link to="/">Go back</Link>
       {visibleEpisodes.map(episode => {
         const epData = episode;
         epData.podcastTitle = feedDetails.title;
