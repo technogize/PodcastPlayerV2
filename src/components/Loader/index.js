@@ -2,9 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Loader = props => {
-  const { isLoading } = props;
+  const { isLoading, additionalClasses, position } = props;
 
-  const classes = `Loader${isLoading ? ' Loader--active' : ''}`;
+  const classes = `Loader${isLoading ? ' Loader--active' : ''}${
+    position === 'absolute' ? ' Loader--absolute' : ''
+  } ${additionalClasses || ''}`;
 
   return (
     <div className={classes}>
@@ -14,11 +16,15 @@ const Loader = props => {
 };
 
 Loader.propTypes = {
-  isLoading: PropTypes.bool
+  isLoading: PropTypes.bool,
+  additionalClasses: PropTypes.string,
+  position: PropTypes.string
 };
 
 Loader.defaultProps = {
-  isLoading: false
+  isLoading: false,
+  additionalClasses: null,
+  position: null
 };
 
 export default Loader;

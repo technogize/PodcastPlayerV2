@@ -3,6 +3,7 @@ import ReactPlayer from 'react-player/lazy';
 import PropTypes from 'prop-types';
 import Button from '../Button';
 import Duration from './duration';
+import Loader from '../Loader';
 
 const Player = props => {
   const { url, playing, title, podcastTitle } = props;
@@ -10,6 +11,7 @@ const Player = props => {
   const [isSeeking, setIsSeeking] = useState(false);
   const [durationTime, setDurationTime] = useState(0);
   const [playedTime, setPlayedTime] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
   const playerElem = useRef(null);
 
   const handleProgress = state => {
@@ -46,6 +48,7 @@ const Player = props => {
       <div className="Player__title">
         <h3 className="Player__title-podcast">{podcastTitle}</h3>
         <h2 className="Player__title-track">{title}</h2>
+        <Loader isLoading={isLoading} position="absolute" />
       </div>
       <input
         type="range"
@@ -81,6 +84,8 @@ const Player = props => {
         playing={isPlaying}
         onProgress={handleProgress}
         onDuration={handleDuration}
+        onBuffer={() => setIsLoading(true)}
+        onBufferEnd={() => setIsLoading(false)}
       />
     </div>
   );

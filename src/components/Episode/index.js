@@ -5,6 +5,7 @@ import Modal from '../Modal';
 
 const Episode = props => {
   const {
+    className,
     imageUrl,
     episodeName,
     episodeDesc,
@@ -13,6 +14,8 @@ const Episode = props => {
     isPlaylist,
     onPlayClick
   } = props;
+
+  const classes = `Episode ${className}`;
 
   const backgroundImage = { backgroundImage: `url(${imageUrl})` };
   const playHandler = e => {
@@ -24,7 +27,7 @@ const Episode = props => {
     : 'Episode__info-container Episode__info-container--no-padding';
 
   return (
-    <div className="Episode">
+    <div className={classes}>
       <div className="Episode__name">{episodeName}</div>
       <div className="Episode__bottom">
         {imageUrl && <div className="Episode__image" style={backgroundImage} />}
@@ -48,6 +51,7 @@ const Episode = props => {
 };
 
 Episode.propTypes = {
+  className: PropTypes.string,
   imageUrl: PropTypes.string,
   episodeName: PropTypes.string,
   episodeDesc: PropTypes.string,
@@ -58,6 +62,7 @@ Episode.propTypes = {
 };
 
 Episode.defaultProps = {
+  className: null,
   imageUrl: null,
   episodeName: null,
   episodeDesc: null,

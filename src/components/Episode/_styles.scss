@@ -4,6 +4,12 @@
   height: 135px;
   overflow: hidden;
 
+  &__now-playing {
+    .Episode__name {
+      animation: now-playing-text 1s infinite;
+    }
+  }
+
   &__bottom {
     display: flex;
   }
@@ -24,6 +30,7 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     padding-bottom: 5px;
+    color: $col-white;
   }
 
   &__info-container {
@@ -55,4 +62,10 @@
   &__pub-date {
     color: $col-primary;
   }
+}
+
+@keyframes now-playing-text {
+  0% { color: $col-white; }
+  50% { color: $col-green; }
+  100% { color: $col-white; }
 }

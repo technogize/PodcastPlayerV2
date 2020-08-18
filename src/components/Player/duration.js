@@ -28,7 +28,7 @@ const Duration = props => {
 
 Duration.propTypes = {
   className: PropTypes.string,
-  seconds: PropTypes.string
+  seconds: PropTypes.number
 };
 
 Duration.defaultProps = {
