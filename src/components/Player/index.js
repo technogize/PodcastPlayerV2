@@ -2,12 +2,16 @@ import React, { useState, useRef } from 'react';
 import ReactPlayer from 'react-player/lazy';
 import PropTypes from 'prop-types';
 import Button from '../Button';
+import Duration from './duration';
+import Loader from '../Loader';
 
 const Player = props => {
   const { url, playing, title, podcastTitle } = props;
   const [isPlaying, setIsPlaying] = useState(playing);
   const [isSeeking, setIsSeeking] = useState(false);
+  const [durationTime, setDurationTime] = useState(0);
   const [playedTime, setPlayedTime] = useState(0);
+  const [isLoading, setIsLoading] = useState(false);
   const playerElem = useRef(null);
 
   const handleProgress = state => {
@@ -15,6 +19,11 @@ const Player = props => {
     if (!isSeeking) {
       setPlayedTime(state.played);
     }
+  };
+
+  const handleDuration = duration => {
+    console.log('onDuration', duration);
+    setDurationTime(duration);
   };
 
   const handleSeekMouseDown = () => {
@@ -39,6 +48,7 @@ const Player = props => {
       <div className="Player__title">
         <h3 className="Player__title-podcast">{podcastTitle}</h3>
         <h2 className="Player__title-track">{title}</h2>
+        <Loader isLoading={isLoading} position="absolute" />
       </div>
       <input
         type="range"
@@ -54,6 +64,7 @@ const Player = props => {
         onTouchEnd={handleSeekMouseUp}
       />
       <div className="Player__controls">
+        <Duration seconds={durationTime * playedTime} />
         <Button
           className={`Button--icon Player__controls-play-pause ${
             isPlaying ? 'Button--icon-pause' : 'Button--icon-play'
@@ -72,6 +83,9 @@ const Player = props => {
         height="100%"
         playing={isPlaying}
         onProgress={handleProgress}
+        onDuration={handleDuration}
+        onBuffer={() => setIsLoading(true)}
+        onBufferEnd={() => setIsLoading(false)}
       />
     </div>
   );

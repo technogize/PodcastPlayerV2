@@ -1,13 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-import appState from './reducers/reducer_index';
+import store from './stores/stores';
 import './index.scss';
 import App from './App';
 
-const store = createStore(appState);
-
+// For development, give easy access to see whats in the state store without redux devtool
 window.store = store;
 
 ReactDOM.render(
