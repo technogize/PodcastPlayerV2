@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
+import { useParams } from 'react-router-dom';
 // eslint-disable-next-line no-unused-vars
-import { BrowserRouter } from 'react-router-dom';
 import Button from '../../components/Button';
 import EpisodeContainer from '../Episode';
 import Loader from '../../components/Loader';
@@ -11,12 +10,15 @@ import { INIT_NO_OF_EPISODES_TO_SHOW } from '../../utils/constants';
 import podcastData from '../../data/podcasts.json'; // Stub data
 
 const EpisodeList = () => {
+  
   const { id } = useParams();
 
   const [episodes, setEpisodes] = useState([]);
   const [feedDetails, setFeedDetails] = useState({});
   const [visibleEpisodes, setVisibleEpisodes] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
+
+  console.log(id);
 
   useEffect(() => {
     setIsLoading(true);

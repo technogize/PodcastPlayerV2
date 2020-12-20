@@ -1,3 +1,5 @@
+import types from '../types';
+
 /**
  * Sets current playing track
  *
@@ -13,7 +15,7 @@
 
 export default data => {
   return {
-    type: 'NOW_PLAYING',
+    type: types.NOW_PLAYING,
     payload: data
   };
 };
