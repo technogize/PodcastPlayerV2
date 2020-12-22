@@ -53,10 +53,10 @@ const Player = props => {
 
   return (
     <div className="Player">
+      <Loader isLoading={showLoader} position="absolute" />
       <div className="Player__title">
         <h3 className="Player__title-podcast">{podcastTitle}</h3>
         <h2 className="Player__title-track">{title}</h2>
-        <Loader isLoading={showLoader} position="absolute" />
       </div>
       <input
         type="range"

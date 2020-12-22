@@ -1,10 +1,8 @@
-@import "~bulma/sass/elements/button.sass";
 @import "../../styles/icons";
 
 $icons: 'x', 'play', 'pause', 'forward', 'rewind', 'skip-prev', 'skip-next', 'arrow-left', 'menu', 'info';
 
 .Button {
-  @extend .button;
   border-color: $col-black;
 
   &:focus:not(:active) {
