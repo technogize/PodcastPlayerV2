@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import ReactPlayer from 'react-player/lazy';
 import PropTypes from 'prop-types';
 import Button from '../Button';
@@ -11,8 +11,12 @@ const Player = props => {
   const [isSeeking, setIsSeeking] = useState(false);
   const [durationTime, setDurationTime] = useState(0);
   const [playedTime, setPlayedTime] = useState(0);
-  const [isLoading, setIsLoading] = useState(false);
+  const [showLoader, setShowLoader] = useState(true);
   const playerElem = useRef(null);
+
+  useEffect(() => {
+    setShowLoader(true);
+  }, [url]);
 
   const handleProgress = state => {
     // We only want to update time slider if we are not currently seeking
@@ -22,7 +26,6 @@ const Player = props => {
   };
 
   const handleDuration = duration => {
-    console.log('onDuration', duration);
     setDurationTime(duration);
   };
 
@@ -39,16 +42,21 @@ const Player = props => {
     playerElem.current.seekTo(parseFloat(event.target.value));
   };
 
+  const handleReady = () => {
+    setShowLoader(false);
+    setIsPlaying(true);
+  };
+
   const handlePlayPause = () => {
     setIsPlaying(!isPlaying);
   };
 
   return (
     <div className="Player">
+      <Loader isLoading={showLoader} position="absolute" />
       <div className="Player__title">
         <h3 className="Player__title-podcast">{podcastTitle}</h3>
         <h2 className="Player__title-track">{title}</h2>
-        <Loader isLoading={isLoading} position="absolute" />
       </div>
       <input
         type="range"
@@ -84,8 +92,7 @@ const Player = props => {
         playing={isPlaying}
         onProgress={handleProgress}
         onDuration={handleDuration}
-        onBuffer={() => setIsLoading(true)}
-        onBufferEnd={() => setIsLoading(false)}
+        onReady={handleReady}
       />
     </div>
   );

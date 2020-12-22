@@ -11,7 +11,6 @@ const Episode = props => {
     episodeDesc,
     podcastName,
     episodeDate,
-    isPlaylist,
     onPlayClick
   } = props;
 
@@ -57,7 +56,6 @@ Episode.propTypes = {
   episodeDesc: PropTypes.string,
   podcastName: PropTypes.string,
   episodeDate: PropTypes.string,
-  isPlaylist: PropTypes.bool,
   onPlayClick: PropTypes.func
 };
 
@@ -68,7 +66,6 @@ Episode.defaultProps = {
   episodeDesc: null,
   podcastName: '-',
   episodeDate: null,
-  isPlaylist: false,
   onPlayClick: () => {}
 };
 
