@@ -10,15 +10,12 @@ import { INIT_NO_OF_EPISODES_TO_SHOW } from '../../utils/constants';
 import podcastData from '../../data/podcasts.json'; // Stub data
 
 const EpisodeList = () => {
-  
   const { id } = useParams();
 
   const [episodes, setEpisodes] = useState([]);
   const [feedDetails, setFeedDetails] = useState({});
   const [visibleEpisodes, setVisibleEpisodes] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
-  console.log(id);
 
   useEffect(() => {
     setIsLoading(true);
