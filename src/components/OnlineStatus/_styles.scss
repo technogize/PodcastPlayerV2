@@ -1,0 +1,27 @@
+.OnlineStatus {
+  display: flex;
+
+  &__no-wifi-icon-wrapper {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__no-wifi-icon {
+    path {
+      stroke: white;
+      fill: white;
+    }
+  }
+
+  &__text {
+    font-size: 12px;
+    line-height: 14px;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+}
