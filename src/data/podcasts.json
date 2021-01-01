@@ -6,6 +6,12 @@
     "imageUrl": "https://content.production.cdn.art19.com/images/db/11/0f/ef/db110fef-6de8-46ec-b654-5b9579bdebad/94c86043b285dd04bfad3dbceba9956df37fa8baaa168ef6de45dfc05967f9195c3c2027bc558e361af1fb8f61d9ce76004b17355ed507f1870554ee0eebe084.jpeg"
   },
   {
+    "id": 7,
+    "name": "Guardian Football Weekly",
+    "url": "https://www.theguardian.com/football/series/footballweekly/podcast.xml",
+    "imageUrl": "https://stitcher-classic.imgix.net/feedimagesplain600/6295.jpg?w=176&h=176&q=85"
+  },
+  {
     "id": 3,
     "name": "Retronauts",
     "url": "http://retronauts.libsyn.com/rss",

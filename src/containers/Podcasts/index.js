@@ -3,7 +3,7 @@ import PodcastItem from '../../components/PodcastItem';
 
 import podcastData from '../../data/podcasts.json'; // Stub data
 
-const Podcasts = () => {
+const Podcasts = () => {  
   return (
     <div className="Podcasts">
       {podcastData.map(item => {
