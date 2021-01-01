@@ -1,6 +1,7 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import Button from '../Button';
+import OnlineStatus from '../OnlineStatus';
 
 const Header = () => {
   const history = useHistory();
@@ -18,7 +19,9 @@ const Header = () => {
         <h4>Podcasts</h4>
       </div>
       <div className="Header__right">
-        <span className="">v0.1.1</span>
+        <div>
+          <OnlineStatus />
+        </div>
       </div>
     </div>
   );
